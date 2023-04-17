@@ -13,19 +13,27 @@ class Application(tk.Tk):
         self.var_entryP = tk.IntVar()
         self.var_entryF = tk.IntVar()
         self.var_entryA = tk.IntVar()     
+
         self.title(self.name)
+
         self.bind("<Escape>", self.quit)
+
         self.lbl = tk.Label(self, text="Graf")
         self.lbl.pack()
+
         self.btnVypsat = tk.Button(self, text="Načtení ze souboru", command=self.zeSouboru)
         self.btnVypsat.pack()
+
         self.btn = tk.Button(self, text="Odejít", command=self.quit)
         self.btn.pack()
+
     def about(self):
         window = About(self)
         window.grab_set()
+
     def quit(self, event=None):
         super().quit()
+        
     def graf(self):
         self.f = self.var_entryF.get()
         self.a = self.var_entryA.get()
